@@ -1,9 +1,14 @@
 import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram import Router
+from dotenv import load_dotenv
+import os
 
-# Replace 'YOUR_TOKEN' with your bot token
-API_TOKEN = "7638827499:AAF8gaaycoSmryYS0Wn0s2NNMAupiK1aC8Y"
+# Load environment variables from the .env file
+load_dotenv()
+
+# Get the bot token from environment variables
+API_TOKEN = os.getenv("API_TOKEN")
 
 # Initialize bot and dispatcher
 bot = Bot(token=API_TOKEN)
