@@ -32,3 +32,7 @@ async def main():
 if __name__ == "__main__":
     # Run the bot within an event loop
     asyncio.run(main())
+@router.message(lambda message: message.sticker)
+async def echo_sticker(message: types.Message):
+    await message.answer_sticker(message.sticker.file_id)
+
